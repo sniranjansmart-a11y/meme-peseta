@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tamil Meme Padi Da</title>
+  <style>
+    body { background: #000; color: #fff; text-align: center; font-family: sans-serif; }
+    .meme { border: 3px solid yellow; width: 300px; margin: 20px auto; }
+    input { padding: 10px; margin: 10px; width: 80%; }
+    button { padding: 10px 20px; background: yellow; font-weight: bold; }
+    .creator { color: yellow; margin-top: 15px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>🔥 Tamil Meme Generator 🔥</h1>
+  <div class="creator">
+    Made with ❤️ by <b>NIRANJAN S</b><br>
+    B.TECH AI AND ML - Dhanalakshmi Srinivasan University Trichy
+  </div>
+  <input id="topText" placeholder="Mela Text - ex: College la">
+  <input id="bottomText" placeholder="Keezha Text - ex: Mass da">
+  <br>
+  <button onclick="generate()">Generate Meme</button>
+  <br>
+  <canvas id="memeCanvas" width="500" height="500" class="meme"></canvas>
+  <script>
+    function generate() {
+      const canvas = document.getElementById('memeCanvas');
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0,0,500,500);
+      ctx.fillStyle = 'black';
+      ctx.font = '30px Arial';
+      ctx.fillText(document.getElementById('topText').value, 50, 50);
+      ctx.fillText(document.getElementById('bottomText').value, 50, 450);
+      // Un per meme mela watermark mathiri varum
+      ctx.font = '12px Arial';
+      ctx.fillText('By NIRANJAN S - DSU Trichy', 50, 490);
+    }
+  </script>
+</body>
+</html>
